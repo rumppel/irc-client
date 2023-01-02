@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?xml-stylesheet href="style.css"?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.TextFlow?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #FAF9FF#FAF9FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.IRCClient">
+    <children>
+        <Pane style="-fx-background-color: #178d98;" prefHeight="60.0">
+            <Label fx:id="servertext" layoutX="70.0" layoutY="15.0" prefHeight="37.0" prefWidth="402.0" text="ASD" textFill="WHITE">
+                <font>
+                    <Font name="Futura Medium" size="22.0" />
+                </font>
+            </Label>
+            <Label fx:id="porttext" layoutX="350.0" layoutY="15.0" prefHeight="37.0" prefWidth="302.0" text="VV" textFill="WHITE">
+                <font>
+                    <Font name="Futura Medium" size="22.0" />
+                </font>
+            </Label>
+            <Label layoutX="935.0" layoutY="15.0" prefHeight="37.0" prefWidth="302.0" text="User:" textFill="WHITE">
+                <font>
+                    <Font name="Futura Medium" size="22.0" />
+                </font>
+            </Label>
+            <Label fx:id="account" layoutX="990.0" layoutY="15.0" prefHeight="37.0" prefWidth="302.0" text="Acc" textFill="WHITE">
+                <font>
+                    <Font name="Futura Medium" size="22.0" />
+                </font>
+            </Label>
+        </Pane>
+
+        <TabPane id="tabPane" fx:id="tabPane" layoutY="60.1" prefHeight="550" prefWidth="825" rotateGraphic="true" side="TOP">
+            <tabs>
+                <Tab text="Server" fx:id="serverTab" closable="false">
+                    <ScrollPane layoutX="5.0" prefHeight="550.0" vbarPolicy="ALWAYS" hbarPolicy="NEVER">
+                        <TextArea editable="false" fx:id="serverArea" prefHeight="550.0" prefWidth="825" wrapText="true">
+
+                        </TextArea>
+                    </ScrollPane>
+                </Tab>
+                <Tab text="No channel" fx:id="channelTab" closable="false">
+                    <ScrollPane layoutX="5.0" prefHeight="550.0" vbarPolicy="ALWAYS" hbarPolicy="NEVER">
+                        <TextArea editable="false" fx:id="channelArea" prefHeight="550.0" prefWidth="825" wrapText="true">
+
+                        </TextArea>
+                    </ScrollPane>
+                </Tab>
+                <Tab text="About" closable="false">
+                    <ScrollPane layoutX="5.0" prefHeight="550.0" vbarPolicy="ALWAYS" hbarPolicy="NEVER">
+                        <TextArea fx:id="aboutArea" editable="false" prefHeight="550.0" prefWidth="815" wrapText="true">                          </TextArea>
+                    </ScrollPane>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Label text="Users" layoutX="926.1" layoutY="60.1" prefHeight="30.0" textFill="#178d98">
+            <font>
+                <Font name="Futura Medium" size="24.0" />
+            </font>
+        </Label>
+        <ScrollPane layoutX="825.1" layoutY="90.1" prefWidth="279.9" prefHeight="470.0" vbarPolicy="ALWAYS" hbarPolicy="NEVER">
+            <TextArea fx:id="users" editable="false"  layoutX="27.0" prefWidth="279.9" prefHeight="500.0" style="-fx-padding: 1;" text="">
+            </TextArea>
+        </ScrollPane>
+
+        <Label text="Channel topic"  layoutX="895.1" layoutY="555.1" prefHeight="30.0" textFill="#178d98">
+            <font>
+                <Font name="Futura Medium" size="24.0" />
+            </font>
+        </Label>
+       <TextArea layoutX="825.1" layoutY="585.1" fx:id="topic" wrapText="true" editable="false" prefWidth="272.9" prefHeight="110.0" style="-fx-padding: 1;" text="">
+            </TextArea>
+
+        <TextField visible="false" id="usermes" fx:id="Usermes" onAction="#onEnter" layoutX="100.0" layoutY="632.0" prefHeight="35.0" prefWidth="625.0" promptText="Enter message">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <Button id="Connect" fx:id="Connect" layoutX="284.5" layoutY="632.0" mnemonicParsing="false" onAction="#connectToServ" prefHeight="48.0" prefWidth="208.0" style="-fx-background-color: #178d98;" text="Connect!" textFill="WHITE">
+            <font>
+                <Font name="Futura Medium" size="24.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
+

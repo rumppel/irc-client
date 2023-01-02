@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #FAF9FF#FAF9FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ConnectToServer">
+<children>
+    <Label layoutX="500.0" layoutY="161.0" prefHeight="37.0" prefWidth="200.0" text="Connect" textFill="#178d98">
+        <font>
+            <Font name="Futura Medium" size="28.0" />
+        </font>
+    </Label>
+    <Label layoutX="920.0" layoutY="33.0" prefHeight="37.0" prefWidth="302.0" text="User:" textFill="#178d98">
+        <font>
+            <Font name="Futura Medium" size="26.0" />
+        </font>
+    </Label>
+    <Label fx:id="account" layoutX="990.0" layoutY="33.0" prefHeight="37.0" prefWidth="302.0" text="" textFill="#178d98">
+        <font>
+            <Font name="Futura Medium" size="26.0" />
+        </font>
+    </Label>
+    <Label fx:id="error" layoutX="450.0" layoutY="31.0" prefWidth="302.0" text="" wrapText="true" textFill="#981a15">
+        <font>
+            <Font name="Futura Medium" size="24.0" />
+        </font>
+    </Label>
+    <Label layoutX="233.0" layoutY="241.0" prefHeight="130.0" prefWidth="310.0" style="-fx-background-color: #178d98; -fx-padding: 1;" textFill="WHITE"
+           wrapText="true" text="Choose server from yours or add new server. Enter port to connect. Recommended 6666 or 6667.">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <ComboBox fx:id="SignInServer" id="SignInServer" layoutX="575.0" layoutY="241.0" prefHeight="35.0" prefWidth="300.0" promptText="Server address">
+
+    </ComboBox>
+    <TextField id="SignInPort" fx:id="SignInPort" layoutX="575.0" layoutY="332.0" prefHeight="35.0" prefWidth="300.0" promptText="Port">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </TextField>
+    <Button fx:id="toAddServ" layoutX="233.0" layoutY="408.0" mnemonicParsing="false" onAction="#addServ" prefHeight="48.0" prefWidth="300.0" style="-fx-background-color: #F1F1F1;" text="Add server" textFill="#178d98">
+        <font>
+            <Font name="Futura Medium" size="24.0" />
+        </font>
+    </Button>
+    <Button id="toChat" fx:id="ToChat" layoutX="575.0" layoutY="408.0" mnemonicParsing="false" onAction="#getServerNPort" prefHeight="48.0" prefWidth="300.0" style="-fx-background-color: #178d98;" text="Next" textFill="WHITE">
+        <font>
+            <Font name="Futura Medium" size="24.0" />
+        </font>
+    </Button>
+</children>
+</AnchorPane>
+
