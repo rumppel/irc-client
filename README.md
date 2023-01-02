@@ -5,7 +5,7 @@ This is IRC-client made by Sofiia Liemieshova as coursework.
 * You can only see messages from one channel at a time.
 * Client automatically responds to Server's ping.
 
-After connecting to server via Connect button, you can use this commands:
+After connecting to server via Connect button, you can use these commands:
 
 ```message  - to sent message in current channel;```
 
