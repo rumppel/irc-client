@@ -7,5 +7,42 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mysql-connector-j-8.0.31" level="project" />
+    <orderEntry type="library" exported="" name="java" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../KittehIRCClientLib-master/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="pircbot-1.5.0" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.base" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.controls" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.fxml" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.graphics" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.media" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.swing" />
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/src.zip!/javafx.web" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="javafx.fxml" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../javafx-sdk-19/lib/javafx.fxml.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
