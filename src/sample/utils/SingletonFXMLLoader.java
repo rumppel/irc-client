@@ -1,4 +1,4 @@
-package sample.model;
+package sample.utils;
 import javafx.fxml.FXMLLoader;
 import sample.controller.IRCClient;
 

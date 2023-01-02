@@ -1,7 +1,6 @@
 package sample.controller;
 import javafx.scene.control.Label;
-import sample.model.DatabaseHandler;
-import sample.model.*;
+import sample.utils.DatabaseHandler;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

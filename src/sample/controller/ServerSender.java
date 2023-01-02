@@ -3,7 +3,7 @@ package sample.controller;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import sample.model.Message;
-import sample.model.SingletonFXMLLoader;
+import sample.utils.SingletonFXMLLoader;
 
 import java.io.*;
 import java.net.*;

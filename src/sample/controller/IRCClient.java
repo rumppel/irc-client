@@ -3,15 +3,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import sample.model.DatabaseHandler;
+import sample.utils.DatabaseHandler;
 
 import java.io.IOException;
 
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
-
-import sample.model.*;
 
 public class IRCClient{
     @FXML

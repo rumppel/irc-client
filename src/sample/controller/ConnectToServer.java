@@ -6,14 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import sample.model.DatabaseHandler;
+import sample.utils.DatabaseHandler;
 
 import java.io.IOException;
 
 import java.net.*;
 import java.util.*;
-
-import sample.model.*;
 
 public class ConnectToServer {
 

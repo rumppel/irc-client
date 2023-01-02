@@ -1,4 +1,4 @@
-package sample.model;
+package sample.utils;
 import sample.model.*;
 
 import java.sql.*;

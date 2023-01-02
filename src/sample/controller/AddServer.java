@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.model.DatabaseHandler;
+import sample.utils.DatabaseHandler;
 import sample.model.Server;
 import sample.model.User;
 
