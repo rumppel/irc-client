@@ -1,6 +1,7 @@
 package sample.controller;
 import javafx.scene.control.Label;
 import sample.utils.DatabaseHandler;
+import sample.model.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +48,6 @@ public class ConnectUser {
         User user = new User();
         user.setNick(nick);
         user.setPassword(password);
-        user.setOp(1);
         ResultSet res = dt.getUser(user);
         int c = 0;
         try {
@@ -55,7 +55,6 @@ public class ConnectUser {
                 user.setIduser(res.getInt("USER_ID"));
                 user.setNick(res.getString("USER_NICK"));
                 user.setPassword(res.getString("USER_PASS"));
-                user.setOp(1);
                 c++;
                 break;
             }

@@ -1,7 +1,6 @@
 package sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import sample.utils.DatabaseHandler;
 
@@ -10,6 +9,9 @@ import java.io.IOException;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
+
+import sample.model.*;
+import sample.utils.SingletonFXMLLoader;
 
 public class IRCClient{
     @FXML
@@ -83,8 +85,7 @@ public class IRCClient{
         writer.write("USER " + username + " 8 * :" + realname + "\r\n");
         writer.flush();
 
-        SingletonFXMLLoader.getInstance().fxmlLoader = new FXMLLoader(getClass().getResource("/sample/view/Client.fxml"));
-        SingletonFXMLLoader.getInstance().controller = this;
+        SingletonFXMLLoader.getInstance().clientFXMLLoader = this;
 
         ServerListener listener = new ServerListener(socket);
         listener.start();
@@ -118,24 +119,6 @@ public class IRCClient{
         }
     }
 
-    void updateClientIfAction(String serverAnswer, Message message){
-        if (serverAnswer.contains("JOIN")||serverAnswer.contains("PART")){
-            onUserMsg(serverAnswer, message);
-        }else if (serverAnswer.startsWith("PING")){
-            pingResponse();
-        }else if ((serverAnswer.contains("/NAMES list"))||(serverAnswer.contains("353"))){
-            System.out.println("Server talkin: " + serverAnswer);
-        }
-        else{
-            serverArea.appendText(message.convertToMes() + "\n");
-        }
-        if((serverAnswer.contains("353"))&&(serverAnswer.contains("#"+channelTab.getText()))){
-            getUsers(serverAnswer);
-        }
-        if ((serverAnswer.contains("332"))&&(serverAnswer.contains("#"+channelTab.getText()))){
-            getChannelTopic(serverAnswer);
-        }
-    }
     void getUsers(String serverAnswer){
         users.setText("");
         ArrayList<String> userslist = channel.getCurrentUsers(serverAnswer);
@@ -176,6 +159,25 @@ public class IRCClient{
         }
         else{
             serverArea.appendText(message.convertToMes()+"\n");
+        }
+    }
+
+    void updateClientIfAction(String serverAnswer, Message message){
+        if (serverAnswer.contains("JOIN")||serverAnswer.contains("PART")|| (serverAnswer.contains("PRIVMSG")&serverAnswer.contains("#"))) {
+            onUserMsg(serverAnswer, message);
+        }else if (serverAnswer.startsWith("PING")){
+            pingResponse();
+        }else if ((serverAnswer.contains("/NAMES list"))||(serverAnswer.contains("353"))){
+            System.out.println("Server talkin: " + serverAnswer);
+        }
+        else{
+            serverArea.appendText(message.convertToMes() + "\n");
+        }
+        if((serverAnswer.contains("353"))&&(serverAnswer.contains("#"+channelTab.getText()))){
+            getUsers(serverAnswer);
+        }
+        if ((serverAnswer.contains("332"))&&(serverAnswer.contains("#"+channelTab.getText()))){
+            getChannelTopic(serverAnswer);
         }
     }
 

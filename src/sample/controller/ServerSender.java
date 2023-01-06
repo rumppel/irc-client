@@ -1,7 +1,6 @@
 package sample.controller;
 
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
 import sample.model.Message;
 import sample.utils.SingletonFXMLLoader;
 
@@ -31,8 +30,7 @@ public class ServerSender extends Thread {
                 if (serverCommand != null) {
                     out.write(serverCommand + "\r\n");
                     out.flush();
-                    FXMLLoader loader = SingletonFXMLLoader.getInstance().fxmlLoader;
-                    IRCClient ircClient = SingletonFXMLLoader.getInstance().controller;
+                    IRCClient ircClient = SingletonFXMLLoader.getInstance().clientFXMLLoader;
                     LocalTime time = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     Platform.runLater(new Runnable() {
@@ -57,6 +55,5 @@ public class ServerSender extends Thread {
             } catch (InterruptedException ex) {
                 System.out.println("Sleep failed!");
             }
-//        }
     }
 }

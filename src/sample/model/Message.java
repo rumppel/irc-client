@@ -4,29 +4,24 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Message {
-    private final String message;
-    private Server server;
+    private int messageId;
+    private String message;
+    private int channelId;
     private String channelName;
-    private String user;
 
-    public Message(String message, String channelName, Server server, String user) {
+    public Message(int messageId, String message, String channelName, int channelId) {
+        this.messageId = messageId;
         this.message = message;
+        this.channelId = channelId;
         this.channelName = channelName;
-        this.server = server;
-        this.user = user;
     }
 
     public Message(String message) {
-        this(message, null, null, null);
+        this(0, message, null, 0);
     }
     public Message(String message, String channelName) {
-        this(message, channelName, null, null);
+        this(0, message, channelName, 0);
     }
-    public Message(String message, String channelName, String user) {
-        this(message, channelName, null, user);
-    }
-
-
 
     public String getMessage() {
         return message;
@@ -162,16 +157,16 @@ public class Message {
         return channelName;
     }
 
+    public int getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(int channelId) {
+        this.channelId = channelId;
+    }
+
     public void setChannelName(String channelName) {
         this.channelName = channelName;
-    }
-
-    public Server getServer() {
-        return server;
-    }
-
-    public void setServer(Server server) {
-        this.server = server;
     }
 
     @Override

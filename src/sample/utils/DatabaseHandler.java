@@ -74,7 +74,6 @@ public class DatabaseHandler {
                 user.setIduser(res.getInt("USER_ID"));
                 user.setNick(res.getString("USER_NICK"));
                 user.setPassword(res.getString("USER_PASS"));
-                user.setOp(Integer.parseInt(res.getString("USER_OP")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

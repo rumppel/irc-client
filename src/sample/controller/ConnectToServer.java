@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.net.*;
 import java.util.*;
 
+import sample.model.*;
+
 public class ConnectToServer {
 
     @FXML

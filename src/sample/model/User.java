@@ -5,18 +5,15 @@ public class User {
     private int idUser;
     private String nick;
     private String password;
-    private int op;
 
-    public User(int id, String nick, String password, int op) {
+    public User(int id, String nick, String password) {
         this.idUser = id;
         this.nick = nick;
         this.password = password;
-        this.op = op;
     }
-    public User(String nick, String password, int op) {
+    public User(String nick, String password) {
         this.nick = nick;
         this.password = password;
-        this.op = op;
     }
     public User() {
     }
@@ -44,14 +41,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isOp() {
-        return op==1;
-    }
-
-    public void setOp(int op) {
-        this.op = op;
     }
 
     @Override

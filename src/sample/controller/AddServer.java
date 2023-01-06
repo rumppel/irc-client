@@ -65,18 +65,9 @@ public class AddServer {
         server.setServerName(serverName);
         DatabaseHandler dt = new DatabaseHandler();
         User user1 = dt.getUserByNick(user.getNick());
-        int c = 0;
-        ArrayList<Server> servers = dt.getServersArray();
-        for (Server serverr:servers) {
-            if (serverr.getServerAddress().equalsIgnoreCase(serverAdr)){
-                c++;
-            }
-        }
-        if (c==0){
-            dt.addServer(server);
-        }
-        Server server1 = dt.getServerByName(serverName);
-        dt.addServerAndUser(server1, user1);
+        dt.addServer(server);
+        server = dt.getServerByName(serverName);
+        dt.addServerAndUser(server, user1);
 
 
         toServForm.getScene().getWindow().hide();

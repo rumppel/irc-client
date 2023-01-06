@@ -27,7 +27,7 @@ public class ServerListener extends Thread implements Runnable {
                 serverAnswer = in.readLine();
                 Message message = new Message(serverAnswer);
                 if (serverAnswer != null) {
-                    IRCClient ircClient = SingletonFXMLLoader.getInstance().controller;
+                    IRCClient ircClient = SingletonFXMLLoader.getInstance().clientFXMLLoader;
 
                     System.out.println("Server talkin: " + serverAnswer);
 
